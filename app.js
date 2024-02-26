@@ -68,7 +68,8 @@ const showWinner = (winner) => {
     msg.innerText = `Congratulation, Winner is ${winner}`;
     msgContainer.classList.remove("hide");
     disableBoxes();
-}
+};
+
 
 const checkWinner = () => {
     for (let pattern of winPatterns) {
@@ -79,20 +80,16 @@ const checkWinner = () => {
         if (pos1Val != "" && pos2Val != "" && pos3Val != "") {
             if (pos1Val === pos2Val && pos2Val === pos3Val) {
                 showWinner(pos1Val);
-            } else {
-                showDraw();
             }
         }
     }
-};
-
-const showDraw = () => {
     if (countClicks === 9) {
-        msg.innerText = "Draw, Unfortunately No one wins!";
+        msg.innerText = "It's a Draw!";
         msgContainer.classList.remove("hide");
         disableBoxes();
     }
 };
+
 
 newGameBtn.addEventListener("click", resetGame);
 resetBtn.addEventListener("click", resetGame);
